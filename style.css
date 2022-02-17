@@ -1,0 +1,140 @@
+:root {
+  --height: 30em;
+  --width: 17em;
+}
+
+body {
+  background-color: #16161D;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+img {
+  display: block;
+}
+
+h3 {
+  margin: 1em;
+  font-size: 16px;
+}
+
+.container {
+  background-color: black;
+  height: var(--height);
+  width: var(--width);
+  border-radius: 3%;  
+}
+.holder {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  flex: shrink;
+}
+
+.tiny-box {
+  flex: shrink;
+  max-height: 4em;
+  max-width: 4em;
+  margin: 1em;
+}
+
+#card-container {
+  margin-top: 10vh;
+}
+
+#card-image {
+  position: absolute;
+  display: flex;
+  transition: .5s ease-in-out;
+  transition-delay: .5s;
+  justify-content: center;
+}
+
+#card-pic {
+  position: absolute;
+  height: inherit;
+  width: inherit;
+  border-radius: inherit;
+  opacity: 1;
+}
+
+#skin-layer {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  opacity: 0;
+  transition: 1s ease-in-out;
+}
+
+#text-layer {
+  background-color: white;
+  color: transparent;
+  height: calc( var(--height) * .15);
+  position: absolute;
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  opacity: .9;
+  align-items: center;
+  justify-content: space-around;
+  transition: 650ms ease-in-out;
+  border-top-left-radius: 10%;
+  border-top-right-radius: 10%;
+}
+
+#text-title {
+  font-size: 30px;
+}
+
+#text {
+  align-self: flex-start;
+  font-size: 120%;
+  border: solid 8px white;
+  padding: 7%;
+  border-bottom-left-radius: 10%;
+  border-bottom-right-radius: 10%;
+  transition: 650ms ease-in-out;
+  opacity: 0;
+  transform: translateY(-100px)
+}
+
+
+#section-a {
+  flex-direction: column;
+  align-items: center;
+}
+
+#section-c {
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#card-image:hover > #skin-layer {
+  background-color: orange;
+  color: black;
+  opacity: .85;
+  height: 25%;
+  color: white;
+}
+
+#card-image:hover > #text {
+  opacity: 1;
+  transform: translateY(0px)
+}
+
+#card-image:hover {
+  box-shadow: .15em .15em 3em .15em orange;
+}
+
+
+#card-image:hover > #text-layer {
+  background-color: white;
+  opacity: .80;
+  color: black;
+  border-top-left-radius: 1%;
+  border-top-right-radius: 1%;
+  height: 75%;
+}
